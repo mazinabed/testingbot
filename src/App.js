@@ -55,7 +55,7 @@ function App() {
         //   ei_type: document.getElementsByName('ei_type')[0].value,
         //   download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
         //  });
-        Telegram.WebApp.sendData(cartItems);
+        Telegram.WebApp.sendData("test");
         Telegram.WebApp.close();
     });
   };
