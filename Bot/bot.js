@@ -12,11 +12,29 @@ bot.start((ctx) =>
   })
 );
 bot.on('message', (ctx) => {
-  try {
-    const receivedData = JSON.parse(ctx.message.web_app_data.data);
-    console.log('Received data from user:', receivedData);
-    return ctx.reply(receivedData)
+  // try {
+  //   const receivedData = JSON.parse(ctx.message.web_app_data.data);
+  //   console.log('Received data from user:', receivedData);
+  //   const Data2 = receivedData.cartItems[0].tilte
+  //   return ctx.reply(Data2)
     // Process the received data as needed
+    try {
+      const receivedData = JSON.parse(ctx.message.web_app_data.data);
+  
+      // Extract cartItems from received data
+      const cartItems = receivedData.cartItems;
+  
+      // Assuming cartItems is an array
+      for (const item of cartItems) {
+        const title = item.title;
+        const price = item.price;
+  
+        // Now you can use title and price as needed
+        console.log('Received item - Title:', title, 'Price:', price);
+  console.log(ctx)
+        // Send a response to the user or perform any other actions
+        ctx.reply(ctx.from.first_name + ` Received item - Title: ${title}, Price: ${price}` );
+      }
   } catch (error) {
     console.error('Error parsing received data:', error);
   }
