@@ -42,10 +42,10 @@ function App() {
   
 
   const onCheckout = () => {
-    // const dataToSend = {
-    //   cartItems: cartItems,
-    //   // Add any other relevant data you want to send
-    // };
+    const dataToSend = {
+      cartItems: cartItems,
+      // Add any other relevant data you want to send
+    };
     // tele.MainButton.text = "Pay :)";
     // tele.MainButton.show();
       // Optionally, you can send the selected items to the bot immediately
