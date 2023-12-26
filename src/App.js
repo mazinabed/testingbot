@@ -44,6 +44,13 @@ function App() {
     tele.MainButton.text = "Pay :)";
     tele.MainButton.show();
   };
+  const onPayButtonClick = async () => {
+    // Call the function to send selected items to the bot
+    await sendSelectedItemsToBot(cartItems);
+
+    // Add any additional logic related to the "Pay" button click here
+    console.log("Pay button clicked!");
+  };
 
   return (
     <>
@@ -56,6 +63,10 @@ function App() {
           );
         })}
       </div>
+       {/* Display the bot response */}
+       <div className="bot-response">{botResponse}</div>
+      {/* Button to trigger the "Pay" button click */}
+      <button onClick={onPayButtonClick}>Pay</button>
     </>
   );
 }
