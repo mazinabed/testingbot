@@ -46,14 +46,15 @@ function App() {
     // tele.MainButton.show();
       // Optionally, you can send the selected items to the bot immediately
       tele.WebApp.MainButton.setText('Pay :)').show().onClick(function () {
-        const data = JSON.stringify({
-          username: document.querySelector('input[name=username]').value,
-          password: document.querySelector('input[name=password]').value,
-          date_start: document.querySelector('input[name=dates]').value,
-          date_end: document.querySelector('input[name=datee]').value,
-          ei_type: document.getElementsByName('ei_type')[0].value,
-          download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
-         });
+        const data = "testing"
+        // JSON.stringify({
+        //   username: document.querySelector('input[name=username]').value,
+        //   password: document.querySelector('input[name=password]').value,
+        //   date_start: document.querySelector('input[name=dates]').value,
+        //   date_end: document.querySelector('input[name=datee]').value,
+        //   ei_type: document.getElementsByName('ei_type')[0].value,
+        //   download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
+        //  });
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
