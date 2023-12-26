@@ -45,7 +45,7 @@ function App() {
     // tele.MainButton.text = "Pay :)";
     // tele.MainButton.show();
       // Optionally, you can send the selected items to the bot immediately
-      tele.WebApp.MainButton.setText('Pay :)').show().onClick(function () {
+      tele.MainButton.setText('Pay :)').show().onClick(function () {
         const data = "testing"
         // JSON.stringify({
         //   username: document.querySelector('input[name=username]').value,
