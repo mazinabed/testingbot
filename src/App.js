@@ -39,18 +39,26 @@ function App() {
       );
     }
   };
+  
 
   const onCheckout = () => {
-    tele.MainButton.text = "Pay :)";
-    tele.MainButton.show();
+    // tele.MainButton.text = "Pay :)";
+    // tele.MainButton.show();
+      // Optionally, you can send the selected items to the bot immediately
+      tele.WebApp.MainButton.setText('Pay :)').show().onClick(function () {
+        const data = JSON.stringify({
+          username: document.querySelector('input[name=username]').value,
+          password: document.querySelector('input[name=password]').value,
+          date_start: document.querySelector('input[name=dates]').value,
+          date_end: document.querySelector('input[name=datee]').value,
+          ei_type: document.getElementsByName('ei_type')[0].value,
+          download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
+         });
+        Telegram.WebApp.sendData(data);
+        Telegram.WebApp.close();
+    });
   };
-  const onPayButtonClick = async () => {
-    // Call the function to send selected items to the bot
-    await sendSelectedItemsToBot(cartItems);
-
-    // Add any additional logic related to the "Pay" button click here
-    console.log("Pay button clicked!");
-  };
+  
 
   return (
     <>
@@ -63,10 +71,6 @@ function App() {
           );
         })}
       </div>
-       {/* Display the bot response */}
-       <div className="bot-response">{botResponse}</div>
-      {/* Button to trigger the "Pay" button click */}
-      <button onClick={onPayButtonClick}>Pay</button>
     </>
   );
 }
