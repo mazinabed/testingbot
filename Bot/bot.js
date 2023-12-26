@@ -11,6 +11,22 @@ bot.start((ctx) =>
     },
   })
 );
+// bot.on('text', (ctx) => {
+//   try {
+//     const receivedData = JSON.parse(ctx.message.text);
+//     console.log('Received data from user:', receivedData);
+//     // Process the received data as needed
+//   } catch (error) {
+//     console.error('Error parsing received data:', error);
+//   }
+// });
+bot.on('text', (ctx) => {
+  const receivedData = ctx.message.text;
+  console.log('Received data from user:', receivedData);
+  // Process the received data as needed
+});
+
+
 
 
 
