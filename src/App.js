@@ -42,10 +42,15 @@ function App() {
   
 
   const onCheckout = () => {
+    const dataToSend = {
+      cartItems: cartItems,
+      // Add any other relevant data you want to send
+    };
     // tele.MainButton.text = "Pay :)";
     // tele.MainButton.show();
       // Optionally, you can send the selected items to the bot immediately
       tele.MainButton.setText('Pay :)').show().onClick(function () {
+        const jsonData = JSON.stringify(dataToSend);
         //const data = {cartItems};
         // JSON.stringify({
         //   username: document.querySelector('input[name=username]').value,
@@ -55,7 +60,7 @@ function App() {
         //   ei_type: document.getElementsByName('ei_type')[0].value,
         //   download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
         //  });
-        Telegram.WebApp.sendData("test");
+        Telegram.WebApp.sendData(jsonData);
         Telegram.WebApp.close();
     });
   };
