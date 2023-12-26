@@ -23,7 +23,8 @@ bot.on('message', (ctx) => {
   
       // Extract cartItems from received data
       const cartItems = receivedData.cartItems;
-  
+      const phoneNumber = receivedData.phoneNumber;
+      const address = receivedData.address;
       // Assuming cartItems is an array
       for (const item of cartItems) {
         const title = item.title;
@@ -31,9 +32,18 @@ bot.on('message', (ctx) => {
   
         // Now you can use title and price as needed
         console.log('Received item - Title:', title, 'Price:', price);
-  console.log(ctx)
+  console.log(receivedData)
         // Send a response to the user or perform any other actions
-        ctx.reply(ctx.from.first_name + ` Received item - Title: ${title}, Price: ${price}` );
+        ctx.reply(
+         ` ${ctx.from.first_name}\n`+
+          ` Received item:\n` +
+          `- *Title*: ${title}\n` +
+          `- *Price*: ${price}\n` +
+          `- *Phone Number*: ${phoneNumber}\n` +
+          `- *Address*: ${address}`
+        );
+        
+        //ctx.reply(`Received additional info - Phone Number: ${phoneNumber}, Address: ${address}`);
       }
   } catch (error) {
     console.error('Error parsing received data:', error);

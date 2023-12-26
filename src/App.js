@@ -156,8 +156,16 @@ function App() {
             type="text"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            style={{
+              padding: '8px',
+              fontSize: '14px',
+              borderRadius: '5px',
+              border: '1px solid #ccc',
+              width: '100%',
+            }}
           />
         </label>
+
       </div>
       <div>
         <label>
@@ -166,6 +174,13 @@ function App() {
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
+            style={{
+              padding: '8px',
+              fontSize: '14px',
+              borderRadius: '5px',
+              border: '1px solid #ccc',
+              width: '100%',
+            }}
           />
         </label>
       </div>
