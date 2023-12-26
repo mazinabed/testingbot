@@ -49,24 +49,24 @@ function App() {
     // tele.MainButton.text = "Pay :)";
     // tele.MainButton.show();
       // Optionally, you can send the selected items to the bot immediately
-    //   tele.MainButton.setText('Pay :)').show().onClick(function () {
-    //     const jsonData = JSON.stringify(dataToSend);
-    //     //const data = {cartItems};
-    //     // JSON.stringify({
-    //     //   username: document.querySelector('input[name=username]').value,
-    //     //   password: document.querySelector('input[name=password]').value,
-    //     //   date_start: document.querySelector('input[name=dates]').value,
-    //     //   date_end: document.querySelector('input[name=datee]').value,
-    //     //   ei_type: document.getElementsByName('ei_type')[0].value,
-    //     //   download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
-    //     //  });
-    //     Telegram.WebApp.sendData(jsonData);
-    //     Telegram.WebApp.close();
-    // });
-    tele.MainButton.setText('Pay :)').show().onClick(function () {
-      Telegram.WebApp.sendData("Simple text message");
-      Telegram.WebApp.close();
+      tele.MainButton.setText('Pay :)').show().onClick(function () {
+        const jsonData = JSON.stringify(dataToSend);
+        //const data = {cartItems};
+        // JSON.stringify({
+        //   username: document.querySelector('input[name=username]').value,
+        //   password: document.querySelector('input[name=password]').value,
+        //   date_start: document.querySelector('input[name=dates]').value,
+        //   date_end: document.querySelector('input[name=datee]').value,
+        //   ei_type: document.getElementsByName('ei_type')[0].value,
+        //   download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
+        //  });
+        Telegram.WebApp.sendData(jsonData);
+        Telegram.WebApp.close();
     });
+    // tele.MainButton.setText('Pay :)').show().onClick(function () {
+    //   Telegram.WebApp.sendData("Simple text message");
+    //   Telegram.WebApp.close();
+    // });
     
   };
   

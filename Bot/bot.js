@@ -20,6 +20,11 @@ bot.start((ctx) =>
 //     console.error('Error parsing received data:', error);
 //   }
 // });
+bot.on("message", async (ctx) => {
+  console.log(ctx.message.web_app_data)
+  return ctx.reply(ctx.message.web_app_data.data)
+
+});
 bot.on('text', (ctx) => {
   const receivedData = ctx.message.text;
   console.log('Received data from user:', receivedData);
