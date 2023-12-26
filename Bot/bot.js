@@ -11,20 +11,21 @@ bot.start((ctx) =>
     },
   })
 );
-// bot.on('text', (ctx) => {
-//   try {
-//     const receivedData = JSON.parse(ctx.message.text);
-//     console.log('Received data from user:', receivedData);
-//     // Process the received data as needed
-//   } catch (error) {
-//     console.error('Error parsing received data:', error);
-//   }
-// });
-bot.on("message", async (ctx) => {
-  console.log(ctx.message.web_app_data)
-  return ctx.reply(ctx.message.web_app_data.data)
-
+bot.on('message', (ctx) => {
+  try {
+    const receivedData = JSON.parse(ctx.message.web_app_data.data);
+    console.log('Received data from user:', receivedData);
+    return ctx.reply(receivedData)
+    // Process the received data as needed
+  } catch (error) {
+    console.error('Error parsing received data:', error);
+  }
 });
+// bot.on("message", async (ctx) => {
+//   console.log(ctx.message.web_app_data)
+//   return ctx.reply(ctx.message.web_app_data.data)
+
+// });
 bot.on('text', (ctx) => {
   const receivedData = ctx.message.text;
   console.log('Received data from user:', receivedData);

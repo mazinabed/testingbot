@@ -43,9 +43,7 @@ function App() {
 
   const onCheckout = () => {
     const dataToSend = {
-      title: cartItems.title,
-      price: cartItems.price,
-      quantity: cartItems.quantity
+      cartItems: cartItems,
       // Add any other relevant data you want to send
     };
     // tele.MainButton.text = "Pay :)";
