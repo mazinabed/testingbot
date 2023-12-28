@@ -7,14 +7,6 @@ const Footer = () => {
     <footer className="w-100 mt-auto bg-secondary p-4">
       <div className="container text-center mb-5">
       <h2>مطعمكم. كوت الزهراء. رقم الهاتف: 0780443255</h2>
-      <h3>تواصل معنا</h3>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook />
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
-        </a>
-
         <h4>
       تم انشاء وتطوير هذا البوت من قبل{' '}
           <span
