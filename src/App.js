@@ -141,7 +141,7 @@ function App() {
       // Add any other relevant data you want to send
     };
 
-    tele.MainButton.setText('Pay :)').show().onClick(function () {
+    tele.MainButton.setText('ارسل الطلب').show().onClick(function () {
       const jsonData = JSON.stringify(dataToSend);
       Telegram.WebApp.sendData(jsonData);
       Telegram.WebApp.close();
