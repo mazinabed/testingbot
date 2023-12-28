@@ -6,8 +6,8 @@ function Cart({ cartItems, onCheckout }) {
 
   return (
     <div className="cart__container">
-      {cartItems.length === 0 ? "No items in cart" : ""}
-      <br /> <span className="">Total Price: ${totalPrice.toFixed(2)}</span>
+      {cartItems.length === 0 ? "لا توجد طلبات" : ""}
+      <br /> <span className="">المجموع: ${totalPrice.toFixed(2)}</span>
       <Button
         title={`${cartItems.length === 0 ? "الطلب !" : "الدفع"} `}
         type={"checkout"}
