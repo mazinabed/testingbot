@@ -3,7 +3,7 @@ const TOKEN = "6456398897:AAEP2j09JLgqluudftxWMSxDujmFT4sws6g";
 const bot = new Telegraf(TOKEN);
 
 const web_link = "https://testingbot-8rcz.onrender.com";
-
+const channelId = "@babyloncenter_net"; // Replace with your channel username or ID
 bot.start((ctx) =>
   ctx.reply("Welcome :)))))", {
     reply_markup: {
@@ -33,6 +33,9 @@ bot.on('message', (ctx) => {
         // Now you can use title and price as needed
         console.log('Received item - Title:', title, 'Price:', price);
   console.log(receivedData)
+   // Send the order details to the Telegram channel
+ 
+
         // Send a response to the user or perform any other actions
         ctx.reply(
          ` ${ctx.from.first_name}\n`+
@@ -42,9 +45,21 @@ bot.on('message', (ctx) => {
           `- *Phone Number*: ${phoneNumber}\n` +
           `- *Address*: ${address}`
         );
-        
+        const message = `New order received:\n` +
+        ` ${ctx.from.first_name}\n`+
+        `- *Title*: ${title}\n` +
+        `- *Price*: ${price}\n` +
+        `- *Phone Number*: ${phoneNumber}\n` +
+        `- *Address*: ${address}`;
+     
+      bot.telegram.sendMessage(channelId, message, { parse_mode: 'Markdown' });
         //ctx.reply(`Received additional info - Phone Number: ${phoneNumber}, Address: ${address}`);
+        bot.on('message', (ctx) => {
+          const chatId = ctx.chat.id;
+          console.log('Chat ID:', chatId);
+        });
       }
+
   } catch (error) {
     console.error('Error parsing received data:', error);
   }
@@ -55,8 +70,8 @@ bot.on('message', (ctx) => {
 
 // });
 bot.on('text', (ctx) => {
-  const receivedData = ctx.message.text;
-  console.log('Received data from user:', receivedData);
+  const Data = ctx.message.text;
+  console.log('Received data from user:', Data);
   // Process the received data as needed
 });
 
@@ -65,3 +80,4 @@ bot.on('text', (ctx) => {
 
 
 bot.launch();
+
