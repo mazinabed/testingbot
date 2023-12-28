@@ -20,7 +20,7 @@ bot.on('message', (ctx) => {
     // Process the received data as needed
     try {
       const receivedData = JSON.parse(ctx.message.web_app_data.data);
-  
+      console.log('Received data from user:', receivedData);
       // Extract cartItems from received data
       const cartItems = receivedData.cartItems;
       const phoneNumber = receivedData.phoneNumber;
@@ -29,6 +29,7 @@ bot.on('message', (ctx) => {
       for (const item of cartItems) {
         const title = item.title;
         const price = item.price;
+        
   
         // Now you can use title and price as needed
         console.log('Received item - Title:', title, 'Price:', price);
