@@ -14,6 +14,6 @@ export function getData() {
     { title: "كباب", price: 13.99, Image: kebabImg,id:4 },
     { title: "زلاطة", price: 2.5, Image: saladImg,id:5 },
     { title: "بطل ماء", price: 0.99, Image: waterImg,id:6 },
-    { title: "نثلجات", price: 2.99, Image: iceCreamImg,id:7 },
+    { title: "مثلجات", price: 2.99, Image: iceCreamImg,id:7 },
   ];
 }
