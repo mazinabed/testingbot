@@ -91,6 +91,8 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
+import Footer from './Components/Footer';
+
 const { getData } = require("./db/db");
 const foods = getData();
 
@@ -193,7 +195,7 @@ function App() {
           الملاحظات
           <input
             type="text"
-            placeholder="اكتب الملاحظات او التليمات للطلب"
+            placeholder="اكتب الملاحظات او التعليمات للطلب"
             value={notice}
             onChange={(e) => setNotice(e.target.value)}
             style={{
@@ -214,6 +216,7 @@ function App() {
           );
         })}
       </div>
+      <Footer />
     </>
   );
 }
