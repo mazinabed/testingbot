@@ -100,6 +100,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
+  const [notice, setNotice] = useState("");
 
   useEffect(() => {
     tele.ready();
@@ -136,6 +137,7 @@ function App() {
       cartItems: cartItems,
       phoneNumber: phoneNumber,
       address: address,
+      notice: notice,
       // Add any other relevant data you want to send
     };
 
@@ -148,12 +150,13 @@ function App() {
 
   return (
     <>
-      <h1 className="heading">Order Food</h1>
+      <h1 className="heading">اهلا وسهلا بكم في مطعمكم</h1>
       <div>
         <label>
-          Phone Number:
+          رقم الهاتف:
           <input
             type="text"
+            placeholder="ادخل رقم الهاتف"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             style={{
@@ -161,7 +164,7 @@ function App() {
               fontSize: '14px',
               borderRadius: '5px',
               border: '1px solid #ccc',
-              width: '100%',
+              width: '80%',
             }}
           />
         </label>
@@ -169,9 +172,10 @@ function App() {
       </div>
       <div>
         <label>
-          Address:
+          اعنوان الكامل:
           <input
             type="text"
+            placeholder="اكتب العنوان الكامل مع اقرب نقطة دالة"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             style={{
@@ -179,7 +183,25 @@ function App() {
               fontSize: '14px',
               borderRadius: '5px',
               border: '1px solid #ccc',
-              width: '100%',
+              width: '80%',
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          الملاحظات
+          <input
+            type="text"
+            placeholder="اكتب الملاحظات او التليمات للطلب"
+            value={notice}
+            onChange={(e) => setNotice(e.target.value)}
+            style={{
+              padding: '8px',
+              fontSize: '14px',
+              borderRadius: '5px',
+              border: '1px solid #ccc',
+              width: '80%',
             }}
           />
         </label>

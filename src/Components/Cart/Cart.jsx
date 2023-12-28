@@ -9,7 +9,7 @@ function Cart({ cartItems, onCheckout }) {
       {cartItems.length === 0 ? "No items in cart" : ""}
       <br /> <span className="">Total Price: ${totalPrice.toFixed(2)}</span>
       <Button
-        title={`${cartItems.length === 0 ? "Order !" : "Checkout"} `}
+        title={`${cartItems.length === 0 ? "الطلب !" : "الدفع"} `}
         type={"checkout"}
         disable={cartItems.length === 0 ? true : false}
         onClick={onCheckout}
