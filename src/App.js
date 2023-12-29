@@ -143,7 +143,6 @@ function App() {
       address: address,
       notice: notice,
       totalPrice: totalPrice,
-      totalPrice: totalPrice.toFixed(2), 
       // Add any other relevant data you want to send
     };
 
