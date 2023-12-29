@@ -5,7 +5,7 @@ import '../styles/Header.css';
 function Header() {
   return (
     <header className="header">
-           <h4 className="heading">اهلا وسهلا بكم في مطعمكم</h4>
+           <h2 className="heading">اهلا وسهلا بكم في مطعمكم</h2>
 
     </header>
   );
