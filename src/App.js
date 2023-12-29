@@ -190,7 +190,7 @@ function App() {
             
               margin: '10px'
             }}>
-          اعنوان الكامل:
+          العنوان الكامل:
           <input
             type="text"
             placeholder="اكتب العنوان الكامل مع اقرب نقطة دالة"
