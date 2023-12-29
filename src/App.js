@@ -136,11 +136,14 @@ function App() {
   };
 
   const onCheckout = () => {
+    const totalPrice = cartItems.reduce((a, c) => a + c.price * c.quantity, 0);
     const dataToSend = {
       cartItems: cartItems,
       phoneNumber: phoneNumber,
       address: address,
       notice: notice,
+      totalPrice: totalPrice,
+      totalPrice: totalPrice.toFixed(2), 
       // Add any other relevant data you want to send
     };
 
