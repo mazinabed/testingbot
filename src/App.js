@@ -92,7 +92,8 @@ import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
 import Footer from './Components/Footer';
-
+import Navbar from './Components/Navbar';
+import Header from './Components/Header';
 const { getData } = require("./db/db");
 const foods = getData();
 
@@ -145,16 +146,23 @@ function App() {
 
     tele.MainButton.setText('ارسل الطلب').show().onClick(function () {
       const jsonData = JSON.stringify(dataToSend);
-      Telegram.WebApp.sendData(jsonData);
-      Telegram.WebApp.close();
+      tele.Telegram.WebApp.sendData(jsonData);
+      tele.Telegram.WebApp.close();
     });
   };
 
   return (
     <>
-      <h1 className="heading">اهلا وسهلا بكم في مطعمكم</h1>
+      <Header />
+     
       <div>
-        <label>
+        <label 
+        style={{
+              padding: '8px',
+              fontSize: '14px',
+            
+              margin: '10px'
+            }}>
           رقم الهاتف:
           <input
             type="text"
@@ -166,14 +174,22 @@ function App() {
               fontSize: '14px',
               borderRadius: '5px',
               border: '1px solid #ccc',
-              width: '80%',
+              width: '70%',
+              margin: '20px',
+              alignContent: 'center'
             }}
           />
         </label>
 
       </div>
       <div>
-        <label>
+        <label 
+         style={{
+              padding: '8px',
+              fontSize: '14px',
+            
+              margin: '10px'
+            }}>
           اعنوان الكامل:
           <input
             type="text"
@@ -185,13 +201,18 @@ function App() {
               fontSize: '14px',
               borderRadius: '5px',
               border: '1px solid #ccc',
-              width: '80%',
+              width: '70%',
+              margin: '20px'
             }}
           />
         </label>
       </div>
       <div>
-        <label>
+        <label style={{
+          padding: '8px',
+          fontSize: '14px',
+          margin: '10px'
+        }}>
           الملاحظات
           <input
             type="text"
@@ -203,7 +224,8 @@ function App() {
               fontSize: '14px',
               borderRadius: '5px',
               border: '1px solid #ccc',
-              width: '80%',
+              width: '70%',
+              margin: '20px'
             }}
           />
         </label>
