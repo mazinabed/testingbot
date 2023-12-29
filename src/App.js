@@ -148,8 +148,8 @@ function App() {
 
     tele.MainButton.setText('ارسل الطلب').show().onClick(function () {
       const jsonData = JSON.stringify(dataToSend);
-      tele.Telegram.WebApp.sendData(jsonData);
-      tele.Telegram.WebApp.close();
+      Telegram.WebApp.sendData(jsonData);
+      Telegram.WebApp.close();
     });
   };
 
