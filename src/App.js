@@ -87,18 +87,20 @@
 // }
 
 // export default App;
+
 import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
 import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
+//import Navbar from './Components/Navbar';
 import Header from './Components/Header';
 const { getData } = require("./db/db");
 const foods = getData();
+//import { Telegram } from 'telegraf';
 
 const tele = window.Telegram.WebApp;
-
+//const Telegram = window.Telegram.WebApp;
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -148,8 +150,8 @@ function App() {
 
     tele.MainButton.setText('ارسل الطلب').show().onClick(function () {
       const jsonData = JSON.stringify(dataToSend);
-      Telegram.WebApp.sendData(jsonData);
-      Telegram.WebApp.close();
+      tele.sendData(jsonData);
+      tele.close();
     });
   };
 
